@@ -47,13 +47,14 @@ window.onload = () => {
     }
   };
 
+//moves diamond forward
   let animateForwards = () => {
     let width = document.body.clientWidth - diamond.clientWidth;
     diamond.style.transition = "transform 3s";
     diamond.style.transform = "translate(" + width + "px)";
     setTimeout(animateBackwards, 3000);
   };
-
+//moves diamond backward
   let animateBackwards = () => {
     let width = diamond.offsetWidth + document.body.clientWidth;
     diamond.style.transition = "transform 3s";
