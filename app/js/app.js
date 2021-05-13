@@ -29,32 +29,32 @@ window.onload = () => {
     let OddorEven = diamondsize % 2;
     //if statement that handles both even and odd inputs
     if (OddorEven === 0) {
-      diamond.innerHTML += '*';
-      diamond.innerHTML += '<br>';
+      diamond.innerHTML += '* '';
+      diamond.innerHTML += "<br>";
 
       for (var i = 2; i <= diamondsize; i += 2) {
-        diamond.innerHTML += '* '.repeat(i);
+        diamond.innerHTML += '* ''.repeat(i);
         diamond.innerHTML += "<br>";
       }
       buildDiamondReverse();
-      diamond.innerHTML += '*'';
+      diamond.innerHTML += '* ';
     } else {
       for (var i = 1; i <= diamondsize; i += 2) {
-        diamond.innerHTML += '* '.repeat(i);
-        diamond.innerHTML += '<br>';
+        diamond.innerHTML += '* ''.repeat(i);
+        diamond.innerHTML += "<br>";
       }
       buildDiamondReverse();
     }
   };
 
-//moves diamond forward
+  //moves diamond forward
   let animateForwards = () => {
     let width = document.body.clientWidth - diamond.clientWidth;
     diamond.style.transition = "transform 3s";
     diamond.style.transform = "translate(" + width + "px)";
     setTimeout(animateBackwards, 3000);
   };
-//moves diamond backward
+  //moves diamond backward
   let animateBackwards = () => {
     let width = diamond.offsetWidth + document.body.clientWidth;
     diamond.style.transition = "transform 3s";
@@ -62,13 +62,13 @@ window.onload = () => {
     setTimeout(animateForwards, 3000);
   };
 
-//constructs bottom half of diamond
+  //constructs bottom half of diamond
   let buildDiamondReverse = () => {
     for (var j = diamondsize - 2; j >= 1; j -= 2) {
-      diamond.innerHTML += '*' .repeat(j);
-      diamond.innerHTML += '<br>';
+      diamond.innerHTML += '* ''.repeat(j);
+      diamond.innerHTML += "<br>";
     }
-    animateDiamond();
+    animateForwards();
   };
 
   requestDiamond();
